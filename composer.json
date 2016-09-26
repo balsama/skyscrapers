@@ -1,0 +1,20 @@
+{
+    "name": "balsama/skyscrapers",
+    "description": "A little helper for solving NYTimes Skyscraper puzzles.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adam Balsam",
+            "email": "balsam.adam@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "4.0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Balsama\\Skyscrapers\\": "src"
+        }
+    }
+}

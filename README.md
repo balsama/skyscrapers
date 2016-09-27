@@ -1,9 +1,11 @@
+[![Build Status](https://travis-ci.org/balsama/skyscrapers.svg?branch=1.0.x)](https://travis-ci.org/acquia/lightning)
+
 # Skyscrapers
 A php class to help you solve the Skyscrapers puzzles from NY Times Magazine.
 
 ## Usage
 
-## Basic
+### Basic
 
     <?php
     $view = new View();
@@ -20,7 +22,7 @@ A php class to help you solve the Skyscrapers puzzles from NY Times Magazine.
     // Get the solutions
     $possibleSolutions = $view->getValidConstrainedPermutations();
 
-## Description
+### Description
 A View is what one would see if standing at the end of a row or column on the
 puzzle-board. Instatiate a View:
 

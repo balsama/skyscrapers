@@ -2,6 +2,7 @@
 
 namespace Balsama\Skyscrapers;
 use SebastianBergmann\Exporter\Exception;
+use NajiDev\Permutation;
 
 /**
  * Class View
@@ -54,8 +55,14 @@ class View {
     // (given that only one building of each height can exist in a row or
     // column).
     $buildings = $this->integerToArray($blocks);
+    $permutations = [];
 
-    return $permutations = $this->permute($buildings);
+    $iterations = new Permutation\PermutationIterator($buildings);
+    foreach ($iterations as $iteration) {
+      $permutations[] = $iteration;
+    }
+
+    return $permutations;
   }
 
   /**
@@ -198,32 +205,6 @@ class View {
       }
     }
     return $validConstrainedPermutations;
-  }
-
-  /**
-   * Returns all possible permutations of an array.
-   *
-   * @param array $items
-   *   Array of items to permute.
-   * @param array $perms
-   *   Recursive storage.
-   * @return array
-   *   Array of permutations.
-   */
-  private function permute($items, $perms = []) {
-    if (empty($items)) {
-      $return = array($perms);
-    }  else {
-      $return = array();
-      for ($i = count($items) - 1; $i >= 0; --$i) {
-        $newitems = $items;
-        $newperms = $perms;
-        list($foo) = array_splice($newitems, $i, 1);
-        array_unshift($newperms, $foo);
-        $return = array_merge($return, $this->permute($newitems, $newperms));
-      }
-    }
-    return $return;
   }
 
   /**

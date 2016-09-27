@@ -8,7 +8,9 @@
             "email": "balsam.adam@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "najidev/permutation": "^1.0.0"
+    },
     "require-dev": {
         "phpunit/phpunit": "4.0.*"
     },
